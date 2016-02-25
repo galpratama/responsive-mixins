@@ -1,0 +1,39 @@
+// Sass Mixin 
+// Galih Pratama (hanamura.iost@gmail.com)
+// 
+@mixin respond-to($media) {
+    /* Landscape phones and down */
+    @if $media == xs {
+        @media (max-width: 767px) { @content; }
+    }
+    /* Landscape phone to portrait tablet */
+    @else if $media == sm {
+        @media (min-width: 768px) and (max-width: 991px) {@content; }
+    }
+    /* Portrait tablet to landscape and desktop */
+    @else if $media == md {
+        @media (min-width: 992px) and (max-width: 1199px) { @content; }
+    }
+    /* desktop and large desktop */
+    @else if $media == lg {
+        @media (min-width: 1200px) and (max-width: 1439px) { @content; }
+    }
+    /* non retina */
+    @else if $media == non-retina {
+        @media screen and (-webkit-max-device-pixel-ratio: 1) { @content; }
+    }
+    /* retina only */
+    @else if $media == retina {
+        @media screen and (-webkit-min-device-pixel-ratio: 2) { @content; }
+    }
+    /* specific max-width */
+    @else {
+        @media only screen and (max-width: #{$media}px) { @content; }
+    }
+}
+
+@mixin respondto($media...) {
+    @each $mediatype in $media {
+        @include respond-to($mediatype) {@content;}
+    }
+}

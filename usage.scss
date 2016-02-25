@@ -1,0 +1,6 @@
+.your-element {
+   height:5em; 
+   @include respondto (xs, sm, md) {
+      height: 2em;
+   }
+}
