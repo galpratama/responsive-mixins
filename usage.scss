@@ -3,4 +3,11 @@
    @include respondto (xs, sm, md) {
       height: 2em;
    }
+   @include respondto (md) {
+      color: #fff;
+   }
+   // custom breakpoint
+   @include respondto (120) {
+      color: red;
+   }
 }
