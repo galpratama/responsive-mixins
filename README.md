@@ -1,6 +1,6 @@
-# Bootstrap 3 Responsive Mixin 
+# Responsive Mixin 
 
-Bootstrap 3 Responsive Mixin to make your life easier and change your life forever. (not really)
+Responsive Mixin to make your life easier and change your life forever. (not really)
 
 ## Available mixin to use
 - Bootstrap (`xs, sm, md, lg`)
