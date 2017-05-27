@@ -1,39 +1,123 @@
-// Sass Mixin 
+// Bootstrap Sass Mixin 
 // Galih Pratama (hanamura.iost@gmail.com)
-// 
-@mixin respond-to($media) {
-    /* Landscape phones and down */
-    @if $media == xs {
-        @media (max-width: 767px) { @content; }
-    }
-    /* Landscape phone to portrait tablet */
-    @else if $media == sm {
-        @media (min-width: 768px) and (max-width: 991px) {@content; }
-    }
-    /* Portrait tablet to landscape and desktop */
-    @else if $media == md {
-        @media (min-width: 992px) and (max-width: 1199px) { @content; }
-    }
-    /* desktop and large desktop */
-    @else if $media == lg {
-        @media (min-width: 1200px) and (max-width: 1439px) { @content; }
-    }
-    /* non retina */
-    @else if $media == non-retina {
-        @media screen and (-webkit-max-device-pixel-ratio: 1) { @content; }
-    }
-    /* retina only */
-    @else if $media == retina {
-        @media screen and (-webkit-min-device-pixel-ratio: 2) { @content; }
-    }
-    /* specific max-width */
-    @else {
-        @media only screen and (max-width: #{$media}px) { @content; }
-    }
+
+// ==== USAGE IN PRACTICE ====
+// .your-element {
+//   height:5em; 
+//   @include respondto (xs, sm, md) {
+//      height: 2em;
+//   }
+//   @include respondto (md) {
+//      color: #fff;
+//   }
+//   // custom breakpoint
+//   @include respondto (120) {
+//      color: red;
+//   }
+// }
+
+@mixin respond($media) {
+
+  /* Bootstrap Media Queries */
+  /* Landscape phones and down */
+  @if $media == xs {
+    @media (max-width: 767px) { @content; }
+  }
+  /* Landscape phone to portrait tablet */
+  @else if $media == sm {
+    @media (min-width: 768px) and (max-width: 991px) {@content; }
+  }
+  /* Portrait tablet to landscape and desktop */
+  @else if $media == md {
+    @media (min-width: 992px) and (max-width: 1199px) { @content; }
+  }
+  /* Desktop and large desktop */
+  @else if $media == lg {
+    @media (min-width: 1200px) { @content; }
+  }
+
+  /* Display density */
+  /* Non retina */
+  @else if $media == non-retina {
+    @media screen and (-webkit-max-device-pixel-ratio: 1) { @content; }
+  }
+  /* Retina only */
+  @else if $media == retina {
+    @media screen and (-webkit-min-device-pixel-ratio: 2) { @content; }
+  }
+
+  /* Devices-specified */
+  /* iPhone 5/5S/SE */
+  @else if $media == iphone-5 {
+      @media only screen
+      and (min-device-width : 320px)
+      and (max-device-width : 568px) { @content; }
+  }
+  /* iPhone 5/5S/SE - Portrait */
+  @else if $media == iphone-5-portrait {
+      @media only screen
+      and (min-device-width : 320px)
+      and (max-device-width : 568px)
+      and (orientation : portrait) { @content; }
+  }
+  /* iPhone 5/5S/SE - Landscape */
+  @else if $media == iphone-5-landscape {
+      @media only screen
+      and (min-device-width : 320px)
+      and (max-device-width : 568px)
+      and (orientation : landscape) { @content; }
+  }
+
+  /* iPhone 2G, 3G, 4, 4S */
+  @else if $media == iphone-4 {
+    @media only screen
+    and (min-device-width : 320px)
+    and (max-device-width : 480px) { @content; }
+  }
+  /* iPhone 2G, 3G, 4, 4S - Portrait */
+  @else if $media == iphone-4-portrait {
+    @media only screen
+    and (min-device-width : 320px)
+    and (max-device-width : 480px)
+    and (orientation : portrait) { @content; }
+  }
+  /* iPhone 2G, 3G, 4, 4S - Landscape */
+  @else if $media == iphone-4-landscape {
+    @media only screen
+    and (min-device-width : 320px)
+    and (max-device-width : 480px)
+    and (orientation : landscape) { @content; }
+  }
+
+  /* iPad All generations - including iPad mini */
+  @else if $media == ipad {
+    @media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1024px) { @content; }
+  }
+  /* iPad All generations - including iPad mini - Portrait*/
+  @else if $media == ipad-portrait {
+    @media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1024px)
+    and (orientation : portrait) { @content; }
+  }
+  /* iPad All generations - including iPad mini - Landscape*/
+  @else if $media == ipad-landscape {
+    @media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1024px)
+    and (orientation : landscape) { @content; }
+  }
+    
+  /* Specific max-width */
+  @else {
+      @media only screen and (max-width: #{$media}px) { @content; }
+  }
 }
 
 @mixin respondto($media...) {
-    @each $mediatype in $media {
-        @include respond-to($mediatype) {@content;}
-    }
+  @each $mediatype in $media {
+      @include respond($mediatype) {@content;}
+  }
 }
