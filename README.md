@@ -1,8 +1,14 @@
 # Bootstrap 3 Responsive Mixin 
 
-Bootstrap 3 Responsive Mixin to make your life easier and change your life forever.
+Bootstrap 3 Responsive Mixin to make your life easier and change your life forever. (not really)
 
-Forked from Flo, Peschee and AmoHoban from Github Gists
+## Available mixin to use
+- Bootstrap (`xs, sm, md, lg`)
+- Non-Retina Display (`non-retina`)
+- Retina Display (`retina, retina-3x, retina-4x`)
+- iPhone 5/5S/SE (`iphone-5, iphone-5-portrait, iphone-5-landscape`)
+- iPhone 2G, 3G, 4, 4S (`iphone-4, iphone-4-portrait, iphone-4-landscape`)
+- iPad All generations - including iPad mini (`ipad, ipad-portrait, ipad-landscape`)
 
 ## How to use
 
