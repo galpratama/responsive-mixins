@@ -9,6 +9,7 @@ Responsive Mixin to make your life easier and change your life forever. (not rea
 - iPhone 5/5S/SE (`iphone-5, iphone-5-portrait, iphone-5-landscape`)
 - iPhone 2G, 3G, 4, 4S (`iphone-4, iphone-4-portrait, iphone-4-landscape`)
 - iPad All generations - including iPad mini (`ipad, ipad-portrait, ipad-landscape`)
+- Custom breakpoints (in px)
 
 ## How to use
 
