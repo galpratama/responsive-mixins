@@ -1,20 +1,5 @@
-// Bootstrap Sass Mixin 
+// Responsive Mixins
 // Galih Pratama (hanamura.iost@gmail.com)
-
-// ==== USAGE IN PRACTICE ====
-// .your-element {
-//   height:5em; 
-//   @include respondto (xs, sm, md) {
-//      height: 2em;
-//   }
-//   @include respondto (md) {
-//      color: #fff;
-//   }
-//   // custom breakpoint
-//   @include respondto (120) {
-//      color: red;
-//   }
-// }
 
 @mixin respond($media) {
 
@@ -44,6 +29,14 @@
   /* Retina only */
   @else if $media == retina {
     @media screen and (-webkit-min-device-pixel-ratio: 2) { @content; }
+  }
+  /* 3x only */
+  @else if $media == retina-3x {
+    @media screen and (-webkit-min-device-pixel-ratio: 3) { @content; }
+  }
+  /* 4x only */
+  @else if $media == retina-4x {
+    @media screen and (-webkit-min-device-pixel-ratio: 4) { @content; }
   }
 
   /* Devices-specified */
@@ -95,6 +88,7 @@
     and (min-device-width : 768px)
     and (max-device-width : 1024px) { @content; }
   }
+
   /* iPad All generations - including iPad mini - Portrait*/
   @else if $media == ipad-portrait {
     @media only screen
@@ -102,6 +96,7 @@
     and (max-device-width : 1024px)
     and (orientation : portrait) { @content; }
   }
+
   /* iPad All generations - including iPad mini - Landscape*/
   @else if $media == ipad-landscape {
     @media only screen
@@ -109,7 +104,8 @@
     and (max-device-width : 1024px)
     and (orientation : landscape) { @content; }
   }
-    
+
+
   /* Specific max-width */
   @else {
       @media only screen and (max-width: #{$media}px) { @content; }
